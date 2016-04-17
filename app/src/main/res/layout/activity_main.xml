@@ -87,5 +87,6 @@
         android:id="@+id/reset"
         android:layout_below="@+id/A3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="45dp"
+        android:onClick="beginGame"/>
 </RelativeLayout>
