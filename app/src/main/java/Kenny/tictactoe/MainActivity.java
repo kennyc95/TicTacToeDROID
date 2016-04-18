@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonA3;
     Button buttonB3;
     Button buttonC3;
+    Button [] buttonArray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -29,8 +30,11 @@ public class MainActivity extends AppCompatActivity {
         buttonA3 = (Button) findViewById(R.id.A3);
         buttonB3 = (Button) findViewById(R.id.B3);
         buttonC3 = (Button) findViewById(R.id.C3);
+        buttonArray= new Button[]{buttonA1,buttonA2,buttonA3,buttonB1,buttonB2,buttonB3,buttonC1,buttonC2,buttonC3};
 
-        Button reset = (Button) findViewById(R.id.reset);
+        for(Button b : buttonArray){
+            b.setClickable(false);
+        }
         reset.setText("Start");
 
     }
