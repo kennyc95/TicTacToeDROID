@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         reset.setText("Reset");
 
     }
-    public boolean checkwin(){
+    public boolean checkWin(){
         boolean win = false;
         if(buttonA1.getText().equals(buttonA2.getText()) && buttonA2.getText().equals(buttonA3.getText())){
             win = true;
@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
             win = true;
         }else if(buttonC1.getText().equals(buttonC2.getText()) && buttonC2.getText().equals(buttonC3.getText())){
             win = true;
-        }if(buttonA1.getText().equals(buttonB1.getText()) && buttonB1.getText().equals(buttonC1.getText())){
+        }else if(buttonA1.getText().equals(buttonB1.getText()) && buttonB1.getText().equals(buttonC1.getText())){
             win = true;
-        }if(buttonA2.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonC2.getText())){
+        }else if(buttonA2.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonC2.getText())){
             win = true;
-        }if(buttonA3.getText().equals(buttonB3.getText()) && buttonB3.getText().equals(buttonC3.getText())){
+        }else if(buttonA3.getText().equals(buttonB3.getText()) && buttonB3.getText().equals(buttonC3.getText())){
             win = true;
         }else if(buttonA1.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonC3.getText())){
             win = true;
