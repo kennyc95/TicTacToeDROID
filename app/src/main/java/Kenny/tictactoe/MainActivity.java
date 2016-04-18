@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void beginGame(){
-
         reset.setText("Reset");
 
     }
@@ -65,5 +64,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return win;
     }
+    buttonA1.
+
 
 }

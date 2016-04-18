@@ -17,7 +17,8 @@
         android:layout_marginTop="185dp"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/A3"
-        android:layout_alignStart="@+id/A3" />
+        android:layout_alignStart="@+id/A3"
+        android:onClick="playerClick"/>
 
     <Button
         android:layout_width="100dp"
@@ -25,7 +26,8 @@
         android:id="@+id/A3"
         android:layout_below="@+id/A2"
         android:layout_toLeftOf="@+id/B3"
-        android:layout_toStartOf="@+id/B3" />
+        android:layout_toStartOf="@+id/B3"
+        android:onClick="playerClick"/>
 
     <Button
         android:layout_width="100dp"
@@ -33,21 +35,24 @@
         android:id="@+id/A1"
         android:layout_above="@+id/B2"
         android:layout_toLeftOf="@+id/B2"
-        android:layout_toStartOf="@+id/B2" />
+        android:layout_toStartOf="@+id/B2"
+        android:onClick="playerClick"/>
 
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/B2"
         android:layout_alignTop="@+id/A2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="playerClick"/>
 
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/B3"
         android:layout_alignTop="@+id/A3"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="playerClick"/>
 
     <Button
         android:layout_width="100dp"
@@ -55,7 +60,8 @@
         android:id="@+id/C1"
         android:layout_alignTop="@+id/A1"
         android:layout_alignLeft="@+id/C2"
-        android:layout_alignStart="@+id/C2" />
+        android:layout_alignStart="@+id/C2"
+        android:onClick="playerClick"/>
 
     <Button
         android:layout_width="100dp"
@@ -63,7 +69,8 @@
         android:id="@+id/C2"
         android:layout_below="@+id/C1"
         android:layout_alignLeft="@+id/C3"
-        android:layout_alignStart="@+id/C3" />
+        android:layout_alignStart="@+id/C3"
+        android:onClick="playerClick"/>
 
     <Button
         android:layout_width="100dp"
@@ -71,14 +78,16 @@
         android:id="@+id/C3"
         android:layout_below="@+id/C2"
         android:layout_toRightOf="@+id/B2"
-        android:layout_toEndOf="@+id/B2" />
+        android:layout_toEndOf="@+id/B2"
+        android:onClick="playerClick"/>
 
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/B1"
         android:layout_above="@+id/B2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="playerClick"/>
 
     <Button
         android:layout_width="wrap_content"
