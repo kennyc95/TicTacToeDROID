@@ -1,5 +1,7 @@
 package kenny.tictactoe;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -64,15 +66,32 @@ public class MainActivity extends AppCompatActivity {
     }
    public void playerClick(View v) {
        Button button = (Button) v;
-       if(!button.getText().equals("Reset")) {
-           button.setText("x");
-
-       } else {
+       if((button.getId()== reset.getId())) {
            for (Button b : buttonArray) {
                b.setText("");
                b.setClickable(true);
            }
-           button.setText("Reset");
+           if(button.getText().equals("Start")){
+               button.setText("Reset");
+           }else{
+               button.setText("Start");
+           }
+       }
+        else{
+           button.setText("x");
+           //boolean won = checkWin();
+           /*if(won){
+               AlertDialog.Builder winAlert = new AlertDialog.Builder(this);
+               winAlert.setMessage("Player X has won!")
+                       .setPositiveButton("Continue",new DialogInterface.OnClickListener() {
+                           public void onClick(DialogInterface dialog, int which){
+                               dialog.dismiss();
+                           }
+               }).create();*/
+           for (Button b : buttonArray) {
+               b.setText("");
+               b.setClickable(false);
+           }
        }
    }
 
