@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         buttonA3 = (Button) findViewById(R.id.A3);
         buttonB3 = (Button) findViewById(R.id.B3);
         buttonC3 = (Button) findViewById(R.id.C3);
+        reset = (Button) findViewById(R.id.reset);
         buttonArray= new Button[]{buttonA1,buttonA2,buttonA3,buttonB1,buttonB2,buttonB3,buttonC1,buttonC2,buttonC3};
 
         for(Button b : buttonArray){
@@ -65,10 +66,17 @@ public class MainActivity extends AppCompatActivity {
         }
         return win;
     }
-   /* public void playerClick(View v){
-        Button button = (Button) v;
-        ((Button) v).setText("x");
-    }
-*/
+   public void playerClick(View v) {
+       Button button = (Button) v;
+       if (((Button) v).getText().equals("reset")) {
+           for (Button b : buttonArray) {
+               b.setText("");
+               b.setClickable(true);
+           }
+
+       } else {
+           ((Button) v).setText("x");
+       }
+   }
 
 }
