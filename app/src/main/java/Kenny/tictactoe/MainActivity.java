@@ -65,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
         }
         return win;
     }
-    public void playerClick(View v){
+   /* public void playerClick(View v){
         Button button = (Button) v;
         ((Button) v).setText("x");
     }
-
+*/
 
 }
