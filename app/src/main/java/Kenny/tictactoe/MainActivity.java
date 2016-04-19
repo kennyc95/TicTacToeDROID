@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     Button buttonB3;
     Button buttonC3;
     Button [] buttonArray;
+    Player player1;
+    Player player2;
+    char holder = 'x';
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -44,56 +47,76 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean checkWin(){
-        boolean win = false;
-        if(buttonA1.getText().equals(buttonA2.getText()) && buttonA2.getText().equals(buttonA3.getText())){
-            win = true;
-        }else if(buttonB1.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonB3.getText())){
-            win = true;
-        }else if(buttonC1.getText().equals(buttonC2.getText()) && buttonC2.getText().equals(buttonC3.getText())){
-            win = true;
-        }else if(buttonA1.getText().equals(buttonB1.getText()) && buttonB1.getText().equals(buttonC1.getText())){
-            win = true;
-        }else if(buttonA2.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonC2.getText())){
-            win = true;
-        }else if(buttonA3.getText().equals(buttonB3.getText()) && buttonB3.getText().equals(buttonC3.getText())){
-            win = true;
-        }else if(buttonA1.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonC3.getText())){
-            win = true;
-        }else if(buttonA3.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonC1.getText())){
-            win = true;
+        if(!(buttonA1.getText().equals(""))&&buttonA1.getText().equals(buttonA2.getText()) && buttonA2.getText().equals(buttonA3.getText())){
+            return true;
+        }else if(!(buttonB1.getText().equals(""))&&buttonB1.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonB3.getText())){
+            return true;
+        }else if(!(buttonC1.getText().equals(""))&&buttonC1.getText().equals(buttonC2.getText()) && buttonC2.getText().equals(buttonC3.getText())){
+            return true;
+        }else if(!(buttonA1.getText().equals(""))&&buttonA1.getText().equals(buttonB1.getText()) && buttonB1.getText().equals(buttonC1.getText())){
+            return true;
+        }else if(!(buttonA2.getText().equals(""))&&buttonA2.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonC2.getText())){
+            return true;
+        }else if(!(buttonA3.getText().equals(""))&&buttonA3.getText().equals(buttonB3.getText()) && buttonB3.getText().equals(buttonC3.getText())){
+            return true;
+        }else if(!(buttonA1.getText().equals(""))&&buttonA1.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonC3.getText())){
+            return true;
+        }else if(!(buttonA3.getText().equals(""))&&buttonA3.getText().equals(buttonB2.getText()) && buttonB2.getText().equals(buttonC1.getText())){
+            return true;
         }
-        return win;
+        return false;
     }
    public void playerClick(View v) {
        Button button = (Button) v;
-       if((button.getId()== reset.getId())) {
-           for (Button b : buttonArray) {
-               b.setText("");
-               b.setClickable(true);
-           }
-           if(button.getText().equals("Start")){
+       if ((button.getId() == reset.getId())) {
+           player1 = new Player('X');
+           player2 = new Player('O');
+           if (button.getText().equals("Start")) {
+               for (Button b : buttonArray) {
+                   b.setText("");
+                   b.setClickable(true);
+               }
                button.setText("Reset");
-           }else{
+           } else {
                button.setText("Start");
+               for (Button b : buttonArray) {
+                   b.setText("");
+                   b.setClickable(false);
+               }
            }
-       }
-        else{
-           button.setText("x");
+       } else {
+           if (holder == ('X')) {
+               button.setText("X");
+           } else {
+               button.setText("O");
+           }
            boolean won = checkWin();
-           System.out.println(won);
-           if(won){
+           if (won) {
                AlertDialog.Builder wonAlert = new AlertDialog.Builder(this);
-               wonAlert.setMessage("Player X is the winner!")
-                       .setPositiveButton("Continue", new DialogInterface.OnClickListener(){
-                   @Override
-                   public void onClick(DialogInterface dialog, int which){
-                       dialog.dismiss();
-                   }
-               }).create();
+               wonAlert.setMessage("Player " + holder + " is the winner!")
+                       .create();
+               wonAlert.show();
+
+               for (Button b : buttonArray) {
+                   b.setClickable(false);
+               }
+           }
+           if (holder == ('X')) {
+               holder = 'O';
+           } else {
+              holder = 'X';
            }
        }
    }
+    public static class Player{
+        char name;
+        public Player(char name){
+            this.name = name;
+        }
+
+    }
 }
+
 
 
 
