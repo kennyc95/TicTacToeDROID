@@ -41,10 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void beginGame(){
-        reset.setText("Reset");
-
-    }
     public boolean checkWin(){
         boolean win = false;
         if(buttonA1.getText().equals(buttonA2.getText()) && buttonA2.getText().equals(buttonA3.getText())){
@@ -68,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
     }
    public void playerClick(View v) {
        Button button = (Button) v;
-       if (((Button) v).getText().equals("reset")) {
+       if (((Button) v).getText().equals("Reset")) {
            for (Button b : buttonArray) {
                b.setText("");
                b.setClickable(true);
            }
-
+           ((Button) v).setText("Reset");
        } else {
            ((Button) v).setText("x");
        }
