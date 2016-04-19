@@ -79,22 +79,22 @@ public class MainActivity extends AppCompatActivity {
        }
         else{
            button.setText("x");
-           //boolean won = checkWin();
-           /*if(won){
-               AlertDialog.Builder winAlert = new AlertDialog.Builder(this);
-               winAlert.setMessage("Player X has won!")
-                       .setPositiveButton("Continue",new DialogInterface.OnClickListener() {
-                           public void onClick(DialogInterface dialog, int which){
-                               dialog.dismiss();
-                           }
-               }).create();*/
-           for (Button b : buttonArray) {
-               b.setText("");
-               b.setClickable(false);
+           boolean won = checkWin();
+           System.out.println(won);
+           if(won){
+               AlertDialog.Builder wonAlert = new AlertDialog.Builder(this);
+               wonAlert.setMessage("Player X is the winner!")
+                       .setPositiveButton("Continue", new DialogInterface.OnClickListener(){
+                   @Override
+                   public void onClick(DialogInterface dialog, int which){
+                       dialog.dismiss();
+                   }
+               }).create();
            }
        }
    }
-
 }
+
+
 
 
