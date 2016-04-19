@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     Player player1;
     Player player2;
     char holder = 'X';
+    int counter = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         buttonC3 = (Button) findViewById(R.id.C3);
         reset = (Button) findViewById(R.id.reset);
         buttonArray= new Button[]{buttonA1,buttonA2,buttonA3,buttonB1,buttonB2,buttonB3,buttonC1,buttonC2,buttonC3};
-
         for(Button b : buttonArray){
             b.setClickable(false);
         }
@@ -87,8 +87,10 @@ public class MainActivity extends AppCompatActivity {
        } else if(button.getText().equals("")){
            if (holder == ('X')) {
                button.setText("X");
+               counter++;
            } else {
                button.setText("O");
+               counter++;
            }
            boolean won = checkWin();
            if (won) {
@@ -99,6 +101,14 @@ public class MainActivity extends AppCompatActivity {
                for (Button b : buttonArray) {
                    b.setClickable(false);
                }
+               counter = 0;
+           }
+           else if(counter == 9){
+               AlertDialog.Builder tieAlert = new AlertDialog.Builder(this);
+               tieAlert.setMessage("The game is a tie!")
+                       .create();
+               tieAlert.show();
+               counter = 0;
            }
            if (holder == ('X')) {
                holder = 'O';
