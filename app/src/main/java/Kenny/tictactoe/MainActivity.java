@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                    b.setClickable(false);
                }
            }
-       } else {
+       } else if(button.getText().equals("")){
            if (holder == ('X')) {
                button.setText("X");
            } else {
@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                wonAlert.setMessage("Player " + holder + " is the winner!")
                        .create();
                wonAlert.show();
-
                for (Button b : buttonArray) {
                    b.setClickable(false);
                }
@@ -104,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
            if (holder == ('X')) {
                holder = 'O';
            } else {
-              holder = 'X';
+               holder = 'X';
            }
        }
    }
