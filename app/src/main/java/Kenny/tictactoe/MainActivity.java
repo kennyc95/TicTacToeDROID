@@ -64,15 +64,18 @@ public class MainActivity extends AppCompatActivity {
     }
    public void playerClick(View v) {
        Button button = (Button) v;
-       if (((Button) v).getText().equals("Reset")) {
+       if(!button.getText().equals("Reset")) {
+           button.setText("x");
+
+       } else {
            for (Button b : buttonArray) {
                b.setText("");
                b.setClickable(true);
            }
-           ((Button) v).setText("Reset");
-       } else {
-           ((Button) v).setText("x");
+           button.setText("Reset");
        }
    }
 
 }
+
+
