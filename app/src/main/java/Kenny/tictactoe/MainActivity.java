@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button [] buttonArray;
     Player player1;
     Player player2;
-    char holder = 'x';
+    char holder = 'X';
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
